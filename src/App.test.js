@@ -7,7 +7,7 @@ test("renders App without crashing", () => {
 
   // act
   // if App renders without crashing, should be able to grab the div className='App'
-  const container = screen.getByText(/app/i)
+  const container = screen.getByTestId(/app/i)
 
   // assert
   // check if the container (div class app) is in the document 
