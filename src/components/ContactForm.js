@@ -48,7 +48,7 @@ const ContactForm = () => {
         </div>
         <div>
           <label htmlFor="message">Message</label>
-          <textarea name="message" ref={register({ required: false })} />
+          <textarea name="message" placeholder='add a note:' ref={register({ required: false })} />
         </div>
         {data && (
           <pre style={{ textAlign: "left", color: "white" }}>

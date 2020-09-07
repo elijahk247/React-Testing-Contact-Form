@@ -16,4 +16,24 @@ test('App renders the form inputs', () => {
 
   // assert
   expect(firstNameInput).toBeInTheDocument()
+});
+
+test('can submit the input values', () => {
+  render(<ContactForm />)
+
+  // arrange: grab the inputs
+  const firstName = screen.getByPlaceholderText(/edd/i)
+  const lastName = screen.getByPlaceholderText(/burke/i)
+  const email = screen.getByPlaceholderText(/bluebill1049@hotmail.com/i)
+  const message = screen.getByPlaceholderText(/add a note/i)
+
+  // act: put in the input values
+  fireEvent.change(firstName, {target: {value: 'Eli'}})
+  //console.log(firstName)
+  //fireEvent.change(lastName, {target: {value : 'Kim'}})
+  //fireEvent.change(email, {target: {value: 'sunghoonkim247@gmail.com'}})
+  //fireEvent.change(message, {target: {value: 'testing an input'}})
+
+  // assert 
+  //const newData = screen.getByText('Eli')
 })
