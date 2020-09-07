@@ -36,4 +36,6 @@ test('can submit the input values', () => {
 
   // assert 
   //const newData = screen.getByText('Eli')
+  expect(firstName).toBeInTheDocument()
+  expect(firstName.textContent).toEqual('Eli')
 })

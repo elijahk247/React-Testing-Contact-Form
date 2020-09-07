@@ -10,6 +10,7 @@ const ContactForm = () => {
     setData(data);
   };
 
+
   return (
     <div className="App">
       <form onSubmit={handleSubmit(onSubmit)}>
