@@ -15,11 +15,3 @@ test("renders App without crashing", () => {
   // check if the container (div class app) is in the document 
   expect(container).toBeInTheDocument()
 });
-
-test('Test the form inputs', () => {
-  render(<ContactForm />)
-
-  // arrange: grab all the inputs
-  const firstName = screen.getByText(/first name/i)
-  const lastName = screen.getByText(/last name/i)
-})

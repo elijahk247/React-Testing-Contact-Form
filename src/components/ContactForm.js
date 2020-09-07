@@ -10,6 +10,15 @@ const ContactForm = () => {
     setData(data);
   };
 
+  const handleChange = e => {
+    e.preventDefault()
+
+    const {name, value} = e.target
+    setData({
+      [name]: value
+    })
+  }
+
   return (
     <div className="App">
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -44,7 +53,8 @@ const ContactForm = () => {
           </label>
           <input 
             name="email" 
-            ref={register({ required: true })} 
+            ref={register({ required: true })}
+            onChange={handleChange} 
           />
           {errors.email && (
             <p>Looks like there was an error: {errors.email.type}</p>
@@ -59,7 +69,7 @@ const ContactForm = () => {
             {JSON.stringify(data, null, 2)}
           </pre>
         )}
-        <input type="submit" />
+        <input type="submit" data-testid='submitBtn'/>
       </form>
     </div>
   );
