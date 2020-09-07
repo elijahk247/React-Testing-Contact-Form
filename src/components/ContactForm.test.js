@@ -7,10 +7,13 @@ import ContactForm from './ContactForm'
 test('App renders the form inputs', () => {
   render(<ContactForm />)
 
-  // arrange 
+  // arrange: grab all the form inputs 
   const firstNameInput = screen.getByText(/first name/i)
   //console.log(firstNameInput)
-  //const lastNameInput = screen.getByLabelText(/lastname/i)
-  //const emailInput = screen.getByLabelText(/email/i)
-  //const messageInput = screen.getByLabelText(/message/i)
+  const lastNameInput = screen.getByText(/last name/i)
+  const emailInput = screen.getByText(/email/i)
+  const messageInput = screen.getByText(/message/i)
+
+  // assert
+  expect(firstNameInput).toBeInTheDocument()
 })
