@@ -19,5 +19,7 @@ test("renders App without crashing", () => {
 test('Test the form inputs', () => {
   render(<ContactForm />)
 
+  // arrange: grab all the inputs
   const firstName = screen.getByText(/first name/i)
+  const lastName = screen.getByText(/last name/i)
 })
