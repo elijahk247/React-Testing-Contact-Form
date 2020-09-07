@@ -29,13 +29,22 @@ test('can submit the input values', () => {
 
   // act: put in the input values
   fireEvent.change(firstName, {target: {value: 'Eli'}})
-  //console.log(firstName)
-  //fireEvent.change(lastName, {target: {value : 'Kim'}})
+  console.log(firstName.value)
+  fireEvent.change(lastName, {target: {value : 'Kim'}})
+  console.log(lastName.value)
   //fireEvent.change(email, {target: {value: 'sunghoonkim247@gmail.com'}})
-  //fireEvent.change(message, {target: {value: 'testing an input'}})
+  console.log(email.value)
+  fireEvent.change(message, {target: {value: 'testing an input'}})
+  console.log(message.value)
 
   // assert 
-  //const newData = screen.getByText('Eli')
   expect(firstName).toBeInTheDocument()
-  expect(firstName.textContent).toEqual('Eli')
+  expect(firstName.value).toEqual('Eli')
+  expect(lastName).toBeInTheDocument()
+  expect(email).toBeInTheDocument()
+  expect(message).toBeInTheDocument()
+
+  // checking if the data is rendered on the page after submitting the changes
+  const newData = screen.getByText(/eli/i)
+  expect(newData).toBeInTheDocument()
 })
